@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, signInAnonymously } from 'firebase/auth';
-import { auth } from './utils/firebase';
+import { auth } from './Utils/firebase';
 
 // Components
-import LensHero from './components/Hero/LensHero';
-import Navbar from './components/Layout/Navbar';
-import About from './sections/About';
-import Projects from './sections/Projects';
-import Experience from './sections/Experience';
-import Achievements from './sections/Achievements';
-import Footer from './components/Layout/Footer';
-import Preloader from './components/UI/Preloader';
-import SecureVault from './components/UI/SecureVault';
-import TerminalOverlay from './components/UI/TerminalOverlay';
-import { RESUME } from './data/resume';
+import LensHero from './Components/Hero/LensHero';
+import Navbar from './Components/Layout/Navbar';
+import About from './Sections/About';
+import Projects from './Sections/Projects';
+import Experience from './Sections/Experience';
+import Achievements from './Sections/Achievements';
+import Footer from './Components/Layout/Footer';
+import Preloader from './Components/UI/Preloader';
+import SecureVault from './Components/UI/SecureVault';
+import TerminalOverlay from './Components/UI/TerminalOverlay';
+import { RESUME } from './Data/resume';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
