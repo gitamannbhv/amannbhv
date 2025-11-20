@@ -16,9 +16,8 @@ import TerminalOverlay from './components/UI/TerminalOverlay';
 import { RESUME } from './data/resume';
 
 const App = () => {
-  // FIXED: Added ('home') initialization
   const [activeSection, setActiveSection] = useState('home');
-  const [isVaultOpen, setIsVaultOpen] = useState(false);
+  const [isVaultOpen, setIsVaultOpen] = useState(false); // State to control Vault visibility
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -36,13 +35,26 @@ const App = () => {
 
   const toggleTheme = () => setIsDark(!isDark);
 
+  const handleOpenVault = () => {
+    console.log("Opening Vault..."); // Debugging log
+    setIsVaultOpen(true);
+  };
+
   return (
     <>
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       <div className={`font-sans min-h-screen transition-colors duration-700 selection:bg-gray-500/30 ${isDark ? 'bg-black text-zinc-400' : 'bg-white text-zinc-600'}`}>
         
-        {isVaultOpen && <SecureVault onClose={() => setIsVaultOpen(false)} isDark={isDark} />}
+        {/* Secure Vault Modal - Only renders when isVaultOpen is true */}
+        {isVaultOpen && (
+          <SecureVault 
+            isOpen={isVaultOpen} 
+            onClose={() => setIsVaultOpen(false)} 
+            isDark={isDark} 
+          />
+        )}
+        
         <TerminalOverlay isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
         
         <Navbar 
@@ -51,7 +63,7 @@ const App = () => {
             isDark={isDark} 
             toggleTheme={toggleTheme}
             openTerminal={() => setIsTerminalOpen(true)}
-            openVault={() => setIsVaultOpen(true)}
+            openVault={handleOpenVault} // Pass the handler function
         />
 
         <LensHero isDark={isDark} />
