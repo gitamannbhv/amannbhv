@@ -1,38 +1,132 @@
-# React + Vite
+>_ AMAN ANUBHAV // AI RESEARCHER / ENGINEER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Modern Portfolio V5: Cyber-Aesthetic Interactive Showcase
 
-Currently, two official plugins are available:
+This repository hosts the code for my personal portfolio, designed to showcase advanced engineering skills, not just static credentials. The site features high-performance UI/UX, client-side encryption, and a custom hybrid AI terminal built using React and the Gemini API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo: [Insert Vercel Deployment Link Here]
 
-## React Compiler
+I. Technical Core & Featured Systems
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The portfolio is built on a foundation of performance and security, demonstrating proficiency in MLOps concepts, complex data visualization, and cryptographic implementations.
 
-## Expanding the ESLint configuration
+1. The Interactive Hero Section (E2E & Performance)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The unique landing page combines advanced visual effects with minimal performance impact.
 
+Cyber-Aesthetic Lens: Uses CSS masking (maskImage) over two high-contrast layers to create a "magnifying glass" or "X-ray" effect. Moving the cursor inverts the colors, revealing the hidden, high-contrast text.
 
-Aman Anubhav - AI Researcher Portfolio
+Wireframe Tunnel Animation: The background features a custom HTML5 Canvas animation depicting an infinitely deep, swirling "Spider-Web" tunnel. High-speed light bursts travel from the center outwards, simulating intense data transmission and providing a futuristic, dark-space feel.
 
-This is a modern, premium portfolio website built with React, Vite, Tailwind CSS, and Firebase.
+Smart Scroll: The Navbar implements a custom scroll handler that hides the bar when scrolling down and reveals it instantly when scrolling up, optimizing screen space for content.
 
-🚀 Quick Start (Local Development)
+2. Secure Vault: Dual-Channel Encrypted Ledger
 
-Install Dependencies
+The Secure Vault is a demonstration of client-side cryptography, proving proficiency in secure data handling and encryption protocols.
 
+Feature
+
+Role / Technology Demonstrated
+
+Security Model
+
+Login/Registration
+
+PBKDF2 Hashing: Password hashing for storage and verification.
+
+Key Derivation
+
+User Messaging
+
+Dual Encryption (AES-256 GCM): Every message is encrypted twice before hitting the database.
+
+E2EE + Escrow
+
+User Privacy
+
+User can only decrypt their own sent messages (userPayload field). Other users see encrypted ciphertext.
+
+Privacy Guarantee
+
+Admin Oversight
+
+Admin (credentials below) can decrypt all messages using a Shared Admin Key (via adminPayload), creating a secure support channel for monitoring/audit.
+
+Secure Channel to Admin
+
+Admin Tools
+
+Admin can NUKE CHAIN, prune individual blocks, and manage user status (block/delete).
+
+Data Governance
+
+Admin Access (For Testing/Audit):
+
+Username: amananubhav
+
+Password: youcantguess
+
+3. Neural Link AI Terminal (Hybrid Chatbot)
+
+This feature demonstrates robust MLOps practices by implementing a tiered fallback system to ensure the user always receives an answer, even if the primary API is offline.
+
+Hybrid Tiers: The terminal first checks local commands (help, bio), then attempts to fetch a response from the Gemini API (using gemini-1.5-flash), and finally falls back to a Local Keyword-Matching Bot if the API fails or is unavailable.
+
+Contextual Reasoning: The Gemini model is supplied with the entire RESUME JSON object as systemInstruction context, allowing it to answer deep, specific questions about projects like YVOO, Liquid Neural Networks, and PAVANA.
+
+Custom Identity: The AI adopts a "sophisticated, slightly cyberpunk AI assistant" persona.
+
+II. Development & Contribution
+
+My Work & Philosophy
+
+My philosophy is centered on being a "Genetically Engineered Learner"—I didn't inherit talent; I built it through obsessive curiosity and implementing knowledge to solve real-world problems (like Climate Tech, FinTech, and AI agents). This portfolio is the physical manifestation of that process.
+
+Project Focus: Bridging the gap between research (LNNs) and production (YVOO, Mario-RL).
+
+Contribution: I designed and implemented 100% of the React components, cryptographic logic, state management, and the custom canvas animations.
+
+Future Concepts (Roadmap)
+
+Full ECDH Key Exchange: Upgrade the Secure Vault from symmetric shared-secret to an Asymmetric (Public Key Infrastructure) model for true cryptographic integrity, requiring users to manage their own key pairs.
+
+MLOps Monitoring: Integrate real-time project metrics (e.g., YVOO model drift data, PAVANA simulation results) into the Terminal or a dedicated dashboard section.
+
+III. Local Setup & Deployment
+
+This project requires Node.js, npm, and a Firebase project setup for data persistence.
+
+Prerequisites
+
+Node.js (v18+)
+
+A Firebase Project (with Firestore enabled).
+
+A Gemini API Key.
+
+Installation
+
+# 1. Clone the repository
+git clone [https://github.com/YOUR_USERNAME/portfolio-v5.git](https://github.com/YOUR_USERNAME/portfolio-v5.git)
+cd portfolio-v5
+
+# 2. Install dependencies
 npm install
 
+# 3. Install Tailwind CSS
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
-Setup Environment Variables
-Ensure you have a .env file in the root directory with your Firebase keys:
 
-VITE_FIREBASE_API_KEY=your_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-... (see your .env file)
+Configuration
+
+Create .env: In the root directory, create a .env file and populate it with your keys.
+
+VITE_FIREBASE_API_KEY="..."
+VITE_FIREBASE_AUTH_DOMAIN="..."
+VITE_FIREBASE_PROJECT_ID="..."
+VITE_GEMINI_API_KEY="AIzaSyCV..." # <-- Use your key here
+# ... include all other Firebase details
 
 
 Run Development Server
@@ -40,62 +134,14 @@ Run Development Server
 npm run dev
 
 
-Open http://localhost:5173 to see your site.
+Deployment (Recommended: Vercel)
 
-🏠 Local Hosting (Production Simulation)
+The easiest way to deploy this React/Vite app is via Vercel.
 
-To see exactly how your site will look when deployed to the web (optimised and minified):
+Push your code to a GitHub repository.
 
-Build the Project
-This compiles your code into the dist/ folder.
+Go to Vercel.com and import the repository.
 
-npm run build
+Crucially: Add all VITE_FIREBASE_... and VITE_GEMINI_API_KEY variables to the Environment Variables section in your Vercel project settings.
 
-
-Preview the Build
-This uses Vite's built-in lightweight server.
-
-npm run preview
-
-
-Run with Custom Node Server (Optional)
-If you want to run it as a standalone Node.js app (good for VPS hosting):
-
-npm run serve
-
-
-Access it at http://localhost:3000.
-
-🌐 Deployment to Vercel (Recommended)
-
-The easiest way to deploy this Vite app is using Vercel.
-
-Option A: Vercel CLI (Fastest)
-
-Install Vercel CLI: npm i -g vercel
-
-Run command: vercel
-
-Follow the prompts (Accept defaults).
-
-Important: Go to your Vercel Dashboard > Settings > Environment Variables and add your Firebase keys there (copy them from your .env file).
-
-Option B: Git Integration (Best Practice)
-
-Push this code to a GitHub repository.
-
-Go to Vercel.com and "Add New Project".
-
-Import your GitHub repository.
-
-Vercel will automatically detect Vite.
-
-Add Environment Variables: before clicking "Deploy", verify you paste the content of your .env file into the Environment Variables section.
-
-Click Deploy.
-
-🛠 Troubleshooting
-
-Blank Screen? Check your browser console (F12). If you see Firebase errors, your .env keys are missing or incorrect.
-
-Styles Missing? Ensure tailwind.config.js exists and src/index.css includes the @tailwind directives.
+Deploy. Vercel automatically handles the Vite build process.
