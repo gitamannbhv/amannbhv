@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Terminal, Lock, Sun, Moon } from 'lucide-react';
 import NavButton from '../UI/NavButton';
 
 const Navbar = ({ activeSection, setActiveSection, isDark, toggleTheme, openTerminal, openVault }) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show at the top of the page (buffer of 50px)
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } 
+      // Hide when scrolling down, Show when scrolling up
+      else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    // FIXED: Z-Index 40 is high enough to be seen, but lower than Terminal (60) and Vault (100+)
-    <nav className={`fixed top-0 w-full z-40 backdrop-blur-none border-b-0 transition-colors duration-500`}>
+    <nav 
+      className={`fixed top-0 w-full z-40 backdrop-blur-none border-b-0 transition-all duration-500 ease-in-out transform ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <span 
           className={`text-xl font-bold tracking-tighter cursor-pointer font-cyber ${isDark ? 'text-white' : 'text-black'}`} 

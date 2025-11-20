@@ -7,6 +7,9 @@ const LensHero = ({ isDark }) => {
   const { x, y } = useMousePosition();
   const [isHovering, setIsHovering] = useState(false);
   
+  // Lens Radius Config
+  const lensSize = 200; // Smaller radius as requested
+
   return (
     <section 
       id="home" 
@@ -16,7 +19,6 @@ const LensHero = ({ isDark }) => {
     >
       <CustomCursor isHovering={isHovering} isDark={isDark} />
 
-      {/* FONT INJECTION */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;800&display=swap');
         .font-cyber { font-family: 'JetBrains Mono', monospace; }
@@ -33,11 +35,9 @@ const LensHero = ({ isDark }) => {
       `}</style>
 
       {/* LAYER 1: BASE (Standard View) */}
-      {/* We use absolute positioning to ensure it sits exactly in the same place as Layer 2 */}
       <div className={`absolute inset-0 flex flex-col justify-center items-center z-10 pointer-events-none select-none p-4 font-cyber ${isDark ? 'opacity-30' : 'opacity-50'}`}>
          <WireframeTunnel isDark={isDark} />
          
-         {/* Same font size as Layer 2 for perfect alignment */}
          <h1 className={`text-[6vw] md:text-[7vw] font-extrabold tracking-tighter text-center z-10 whitespace-nowrap transition-opacity duration-500 ${isDark ? 'text-white' : 'text-black'}`}>
            &gt;_ AMAN ANUBHAV
          </h1>
@@ -58,27 +58,24 @@ const LensHero = ({ isDark }) => {
       <div 
         className={`absolute inset-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none font-cyber ${isDark ? 'bg-white' : 'bg-black'}`}
         style={{
-          maskImage: `radial-gradient(350px circle at ${x}px ${y}px, black 0%, transparent 100%)`,
-          WebkitMaskImage: `radial-gradient(350px circle at ${x}px ${y}px, black 0%, transparent 100%)`
+          maskImage: `radial-gradient(${lensSize}px circle at ${x}px ${y}px, black 0%, transparent 100%)`,
+          WebkitMaskImage: `radial-gradient(${lensSize}px circle at ${x}px ${y}px, black 0%, transparent 100%)`
         }}
       >
          {/* Inverted Tunnel */}
          <WireframeTunnel isDark={!isDark} gridColor={isDark ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.2)"} />
          
-         {/* Background Noise */}
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-multiply"></div>
 
-         {/* MAIN TITLE - BRIGHT METAL (No Scaling) */}
+         {/* Content aligned perfectly 1:1 with base layer */}
          <h1 className={`text-[6vw] md:text-[7vw] font-extrabold tracking-tighter text-center z-10 whitespace-nowrap ${isDark ? 'text-metal-light' : 'text-metal-dark'}`}>
            &gt;_ AMAN ANUBHAV
          </h1>
 
-         {/* SUBTITLE */}
          <h2 className={`mt-6 text-sm md:text-xl font-medium tracking-[0.5em] z-10 uppercase ${isDark ? 'text-black' : 'text-white'}`}>
            Engineer Architect
          </h2>
 
-         {/* SYSTEM STATUS */}
          <div className={`mt-16 flex items-center gap-4 text-[10px] font-bold tracking-widest z-10 uppercase ${isDark ? 'text-black' : 'text-white'}`}>
             <span>SYSTEM</span>
             <span>//</span>
@@ -86,6 +83,7 @@ const LensHero = ({ isDark }) => {
             <div className={`w-2 h-2 rounded-full animate-[ping_1s_ease-in-out_infinite] ${isDark ? 'bg-zinc-900' : 'bg-gray-200 shadow-[0_0_10px_white]'}`}></div>
          </div>
       </div>
+
     </section>
   );
 };

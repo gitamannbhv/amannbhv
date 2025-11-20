@@ -1,11 +1,31 @@
 export const RESUME = {
-  name: "AMAN ANUBHAV",
+  name: "AMAN KUMAR ANUBHAV",
   role: "AI RESEARCHER / ENGINEER",
-  about: "Genetically engineered learner. I didn't inherit talent—I built it. I learn to understand real-world problems like climate change and financial exclusion, then engineer intelligent agents and scalable systems to solve them.",
+  about: "I didn't inherit talent—I built it. I call myself a 'Genetically Engineered Learner'. I refuse to learn for grades; instead, I learn to understand real-world problems like climate change and financial exclusion, then engineer intelligent agents and scalable systems to solve them.",
+  philosophy: "The gap between what we know and what we could solve drives everything I do. Climate change, financial exclusion, accessibility—these aren't abstract concepts. They're problems waiting for someone willing to learn deeply enough to fix them.",
   links: {
     linkedin: "https://www.linkedin.com/in/aman-anubhav-5055b6220/",
     github: "https://github.com/gitamannbhv",
-    email: "mailto:amannbhv.cswork@gmail.com" // Deduced from context
+    email: "amannbhv.cswork@gmail.com",
+    news: "https://www.globalindian.com/youth/story/cover-story/aman-anubhav-the-bihar-teen-impresses-nasa/"
+  },
+  education: [
+    {
+      institution: "KIIT University",
+      degree: "B.Tech in Computer Science & Engineering (AI/ML)",
+      focus: "Deep Learning, MLOps, Cloud Computing"
+    },
+    {
+      institution: "DPS GAYA",
+      degree: "High School Diploma",
+      focus: "Aerospace Science and Theoretical Physics"
+    }
+  ],
+  skills: {
+    languages: ["Python", "C", "C++", "JavaScript"],
+    ai_ml: ["XGBoost", "TensorFlow", "PyTorch", "Reinforcement Learning (PPO, DDQN)", "Liquid Neural Networks", "Scikit-learn"],
+    full_stack: ["React", "Next.js", "Flask", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
+    cloud_devops: ["Google Cloud (19 courses)", "Docker", "Kubernetes", "MLOps", "AWS", "Azure"]
   },
   projects: [
     { 
@@ -13,7 +33,7 @@ export const RESUME = {
       title: "YVOO", 
       type: "FinTech AI", 
       tech: ["XGBoost", "React", "Flask", "PostgreSQL"], 
-      desc: "AI-driven credit intelligence platform. Automates credit scoring with 90%+ accuracy using synthetic data & ML ensembles. Qualified for Smart India Hackathon 2025 National Screening.", 
+      desc: "AI-driven credit intelligence platform reducing verification time from days to seconds. Automates credit scoring with 90%+ accuracy using synthetic data & ML ensembles. Qualified for Smart India Hackathon 2025 National Screening.", 
       link: "https://github.com/gitamannbhv/YVOO",
       year: "2025"
     },
@@ -22,8 +42,8 @@ export const RESUME = {
       title: "PAVANA", 
       type: "Climate Tech", 
       tech: ["Thermodynamics", "CAD", "Simulation"], 
-      desc: "Solar-powered carbon capture system design capable of removing 90% atmospheric CO2 at reduced costs ($94-232/ton). Features novel gradient composite metal chambers.", 
-      link: "https://github.com/gitamannbhv", // Placeholder as per doc
+      desc: "Solar-powered carbon capture system design utilizing novel gradient composite metal chambers. Capable of removing 90% of atmospheric CO2 at reduced costs ($94-232/ton).", 
+      link: "https://github.com/gitamannbhv",
       year: "2020-Present"
     },
     { 
@@ -50,7 +70,7 @@ export const RESUME = {
       type: "Clean Energy", 
       tech: ["Fluid Dynamics", "Eco-Design"], 
       desc: "Wildlife-friendly river-flow energy harvester achieving ~98% efficiency without traditional turbine blades. Winner of 3M-CII Young Innovators Challenge Award.", 
-      link: "https://github.com/gitamannbhv", // Placeholder
+      link: "https://github.com/gitamannbhv",
       year: "2021-2022"
     },
     { 
@@ -59,8 +79,17 @@ export const RESUME = {
       type: "AI Research", 
       tech: ["ODEs", "Continuous-Time RNNs"], 
       desc: "Investigating continuous-time recurrent neural networks for adaptive AI systems in robotics and edge computing that adapt post-deployment without retraining.", 
-      link: "https://github.com/gitamannbhv", // Placeholder
+      link: "https://github.com/gitamannbhv",
       year: "Active"
+    },
+    {
+      id: "p7",
+      title: "VYOMAGAMI",
+      type: "Aerospace",
+      tech: ["Physics Simulation", "Concept Design"],
+      desc: "Hybrid balloon-rocket satellite launch system reducing deployment costs by 60-70% through atmospheric resistance minimization.",
+      link: "https://github.com/gitamannbhv",
+      year: "Research Phase"
     }
   ],
   experience: [
@@ -90,8 +119,8 @@ export const RESUME = {
     }
   ],
   achievements: [
-    "Smart India Hackathon 2025 National Screening Qualified",
-    "3M-CII Young Innovators Challenge Award Winner",
+    "Smart India Hackathon 2025 National Screening Qualified (YVOO)",
+    "3M-CII Young Innovators Challenge Award Winner (RAKSHAK)",
     "NYAS Global Champion 2022",
     "NASA International Astronomical Search Collaboration Partner",
     "Featured in Global Indian Magazine as 'The Bihar Teen Who Impressed NASA'"

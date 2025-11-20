@@ -20,16 +20,15 @@ const CustomCursor = ({ isHovering, isDark }) => {
         transform: 'translate(-50%, -50%)'
       }}
     >
-      {/* Triangular Space Cursor */}
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
+      {/* Sharp Triangular Space Cursor */}
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
         <path 
           d="M20 5L35 35H5L20 5Z" 
           stroke={isDark ? "white" : "black"} 
-          strokeWidth="1.5"
+          strokeWidth="2"
           fill="none"
-          className="drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+          className="drop-shadow-[0_0_4px_rgba(255,255,255,0.8)]"
         />
-        {/* Inner Dot Blink */}
         <circle cx="20" cy="25" r="2" fill={isDark ? "white" : "black"} className="animate-ping" />
       </svg>
     </div>
