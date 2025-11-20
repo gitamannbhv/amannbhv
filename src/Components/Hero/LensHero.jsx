@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useMousePosition from '../../hooks/useMousePosition';
+import useMousePosition from '../../Hooks/useMousePosition';
 import WireframeTunnel from './WireframeTunnel';
 import CustomCursor from '../UI/CustomCursor';
 
