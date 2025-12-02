@@ -23,7 +23,7 @@ const About = ({ resumeData }) => {
           
           {/* PROFILE PICTURE COLUMN */}
           <div className="space-y-4">
-             <div className="relative w-full aspect-square border-2 border-green-600/50 flex items-center justify-center overflow-hidden bg-zinc-900 shadow-xl">
+             <div className="relative w-full aspect-square border-2 border-EoFFFF-600/50 flex items-center justify-center overflow-hidden bg-zinc-900 shadow-xl">
                 {/* Placeholder/Profile Image */}
                 <img 
                     src="/profile1.jpg" 
@@ -56,14 +56,17 @@ const About = ({ resumeData }) => {
             </p>
             
             <p className="text-sm leading-relaxed opacity-60 font-sans border-l-2 border-green-600/50 pl-3">
-             {resumeData.philosophy}
+             {resumeData.philosophy} 
+             {/* Add philosophy section */}
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-current opacity-80">
               <div>
                 <h4 className="text-xs opacity-50 mb-2 uppercase tracking-widest">Primary Stack</h4>
                 <ul className="text-sm space-y-1">
-                  {resumeData.skills.ai_ml.slice(0,3).map(s => <li key={s}>{s}</li>)}
+                  <li>Python</li>
+                  <li>SciKit Learn</li>
+                  <li>TensorFlow</li>
                 </ul>
               </div>
               <div>

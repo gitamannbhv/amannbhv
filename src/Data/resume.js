@@ -109,11 +109,11 @@ export const RESUME = {
     { 
       role: "AI/ML Researcher", 
       org: "E-Labs", 
-      time: "Active", 
+      time: "2023-2024", 
       detail: "Leading research innovation and student mentorship in AI/ML concepts. Guiding research projects and fostering collaborative learning environments." 
     },
     { 
-      role: "Student Ambassador", 
+      role: "Project Contributor", 
       org: "Microsoft Learn", 
       time: "2024", 
       detail: "Contributed to Project Wing (RL Algorithms). Taught AI/ML concepts and cloud computing basics to peers." 

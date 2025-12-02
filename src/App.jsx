@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, signInAnonymously } from 'firebase/auth';
-// FIX: Changed from 'supabase' to 'firebase' to match your actual backend
-import { auth } from './Utils/firebase'; 
+import { auth } from './Utils/firebase'; // Ensure casing is correct locally (Utils vs utils)
 
-// Using your Capitalized folder structure
+// Components
 import LensHero from './Components/Hero/LensHero';
 import Navbar from './Components/Layout/Navbar';
 import About from './Sections/About';
 import Projects from './Sections/Projects';
-import Experience from './Sections/Experience';
+import Experience from './Sections/Experience'; // Section 2
 import Achievements from './Sections/Achievements';
 import Footer from './Components/Layout/Footer';
 import Preloader from './Components/UI/Preloader';
@@ -25,7 +24,6 @@ const App = () => {
     const [isDark, setIsDark] = useState(true); 
 
     useEffect(() => {
-        // Only run auth check if auth is initialized successfully
         if (auth) {
              const unsub = onAuthStateChanged(auth, setUser);
              signInAnonymously(auth).catch(console.error);
@@ -66,8 +64,8 @@ const App = () => {
                 {RESUME ? (
                     <main className={`relative z-10 ${isDark ? 'bg-zinc-950' : 'bg-gray-50'}`}>
                         <About resumeData={RESUME} />
+                        <Experience resumeData={RESUME} isDark={isDark} /> 
                         <Projects resumeData={RESUME} isDark={isDark} />
-                        <Experience resumeData={RESUME} isDark={isDark} />
                         <Achievements resumeData={RESUME} isDark={isDark} />
                     </main>
                 ) : (
