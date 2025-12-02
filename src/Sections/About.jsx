@@ -24,7 +24,7 @@ const About = ({ resumeData }) => {
         <div className="grid md:grid-cols-[1fr_2fr] gap-12">
           <div className="space-y-4">
              <div className="w-full aspect-square bg-zinc-900 border border-zinc-800 flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-[../public/profile1.jpg] opacity-20 mix-blend-overlay"></div>
                 <span className="text-6xl font-black text-zinc-800 group-hover:text-zinc-700 transition-colors select-none">AA</span>
              </div>
           </div>
