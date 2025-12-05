@@ -16,7 +16,7 @@ const Footer = ({ isDark }) => {
   const socialLinks = [
     { icon: <Mail size={20} />, href: "mailto:amannbhv.cswork@gmail.com", label: "Email" },
     { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/amananubhav/", label: "LinkedIn" },
-    { icon: <Github size={20} />, href: "https://github.com/gitamannbhv", label: "GitHub" }
+    { icon: <Github size={20} />, href: "https://github.com/amanaanubhav", label: "GitHub" }
   ];
 
   return (
