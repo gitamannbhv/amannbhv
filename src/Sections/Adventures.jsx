@@ -24,10 +24,10 @@ const Adventures = ({ onOpenStory }) => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-zinc-900 pb-4">
             <div>
               <h2 className="text-xs font-cyber tracking-[0.3em] uppercase text-zinc-600 mb-2 flex items-center gap-2">
-                <Sparkles size={12} className="text-green-500" />
-                The Lab & Life
+                // 04. The Lab & Life
+                <Sparkles size={12} className="F7F7F7" />
               </h2>
-              <h3 className="text-3xl font-bold text-white">Adventures & Inventions</h3>
+              <h3 className="text-3xl font-bold text-white">STORIES & NBHV</h3>
             </div>
             <p className="text-zinc-500 text-sm max-w-md mt-4 md:mt-0 text-right font-mono text-[10px] tracking-wide">
               [ LOGS: EXPERIMENTAL_PROJECTS // PERSONAL_QUESTS ]
