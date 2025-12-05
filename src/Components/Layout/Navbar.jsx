@@ -42,7 +42,7 @@ const Navbar = ({ activeSection, setActiveSection, isDark, toggleTheme, openTerm
         </span>
 
         <div className="hidden md:flex gap-10">
-          {['projects', 'experience', 'adventures', 'gallery'].map(id => (
+          {['experience', 'gallery', 'projects', 'adventures'].map(id => (
             <NavButton
               key={id}
               id={id}
