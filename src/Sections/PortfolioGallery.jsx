@@ -31,7 +31,7 @@ const images = [
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop",
         "/G13.jpg",
         "/G11.jpg",
-        "/GV10.mp4",
+        "https://www.youtube.com/embed/vo2v1DklfLE?si=Marn0sk4hKA65vZp",
         "/G4.jpg",
     ],
 ];
@@ -40,6 +40,7 @@ const PhotoCard = ({ src, index }) => {
     if (!src) return null; // Handle empty strings
 
     const isVideo = src.match(/\.(mp4|webm|ogg)$/i);
+    const isYoutube = src.includes("youtube.com/embed");
 
     return (
         <motion.div
@@ -49,9 +50,19 @@ const PhotoCard = ({ src, index }) => {
             viewport={{ once: true, margin: "100px" }}
             className="group relative w-full overflow-hidden rounded-sm mb-4 md:mb-6 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer"
         >
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
 
-            {isVideo ? (
+            {isYoutube ? (
+                <div className="relative w-full aspect-[9/16]">
+                    <iframe
+                        src={src}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        className="absolute inset-0 w-full h-full object-cover"
+                    ></iframe>
+                </div>
+            ) : isVideo ? (
                 <motion.video
                     src={src}
                     autoPlay
