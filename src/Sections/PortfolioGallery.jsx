@@ -100,10 +100,7 @@ const ParallaxColumn = ({ images, y, className }) => {
 
 const MobileGallery = ({ images }) => {
     const containerRef = useRef(null);
-    // Use a state to track the center index for the "snap" effect styling
-    // Alternatively, we can use scrollXProgress for continuous animation, but per-card useScroll is cleaner for "focus" effects
-    // However, since we want "one by one" smooth swapping, let's use a simpler scroll listener approach for the "active" state
-    // to ensure performance on mobile.
+
 
     const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -112,8 +109,6 @@ const MobileGallery = ({ images }) => {
         const container = containerRef.current;
         const center = container.scrollLeft + container.clientWidth / 2;
 
-        // Find the card closest to the center
-        // Assuming cards are children of the first div (motion.div is removed, we use standard div for scrolling)
         const cards = Array.from(container.children);
         let closestIndex = 0;
         let minDistance = Infinity;
@@ -135,11 +130,7 @@ const MobileGallery = ({ images }) => {
             ref={containerRef}
             onScroll={handleScroll}
             className="flex relative overflow-x-auto overflow-y-hidden snap-x snap-mandatory w-full h-[60vh] items-center px-[50vw] scroll-smooth no-scrollbar"
-            // Use specific padding to center the first item: 
-            // Screen center = 50vw. Card center needs to align.
-            // If Card width is 70vw. Card half is 35vw.
-            // Padding Left = 50vw - 35vw = 15vw.
-            // Let's use specific class styles for padding.
+
             style={{ paddingLeft: '15vw', paddingRight: '15vw' }}
         >
             {images.map((src, i) => {
@@ -218,8 +209,8 @@ const ParallaxPortfolio = () => {
 
             {/* Mobile Horizontal Scroll View (< md) */}
             <div className="block md:hidden">
-                <div className="py-10 text-center absolute top-0 left-0 w-full z-10 pointer-events-none mix-blend-difference">
-                    <p className="text-white font-mono text-sm uppercase tracking-widest drop-shadow-md">Archives</p>
+                <div className="py-10 text-center absolute top-0 left-0 w-full z-10 pointer-events-none mix-blend-difference -mt-5 mb-10">
+                    <p className="text-white font-mono text-sm uppercase tracking-widest drop-shadow-md">ARCHIVES</p>
                 </div>
                 <MobileGallery images={allImages} />
             </div>
