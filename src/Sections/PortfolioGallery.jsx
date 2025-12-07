@@ -31,7 +31,7 @@ const images = [
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop",
         "/G13.jpg",
         "/G11.jpg",
-        "https://www.youtube.com/embed/vo2v1DklfLE?si=Marn0sk4hKA65vZp",
+        "/GV10.mp4",
         "/G4.jpg",
     ],
 ];
