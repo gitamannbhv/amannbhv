@@ -3,7 +3,7 @@ import { Terminal, X, Send, Wifi, WifiOff, Cpu } from 'lucide-react';
 import { RESUME } from '../../Data/resume';
 import { ADVENTURES } from '../../Data/adventures'; // Importing Adventures for more context
 
-const VITE_GEMINI_API = import.meta.env.VITE_VITE_GEMINI_API;
+const VITE_GEMINI_API = import.meta.env.VITE_GEMINI_API;
 
 // --- LOCAL KNOWLEDGE BASE ---
 const SYSTEM_COMMANDS = {
