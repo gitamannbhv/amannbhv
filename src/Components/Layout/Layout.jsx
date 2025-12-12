@@ -64,6 +64,7 @@ const Layout = ({
                 <Footer isDark={isDark} openVault={handleOpenVault} />
             </div>
             <Analytics />
+            <SpeedInsights />
         </>
     );
 };
