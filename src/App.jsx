@@ -46,7 +46,7 @@ const App = () => {
 
             {/* Story Modal Overlay */}
             {selectedStory && (
-                <StoryModal story={selectedStory} onClose={handleCloseStory} />
+                <StoryModal story={selectedStory} onClose={handleCloseStory} isDark={isDark} />
             )}
 
             <div className={`font-sans min-h-screen transition-colors duration-700 selection:bg-gray-500/30 ${isDark ? 'bg-black text-zinc-400' : 'bg-white text-zinc-600'}`}>
